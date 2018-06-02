@@ -1,0 +1,75 @@
+html, body, ul, li, div,dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form,  img { margin:0; padding:0; box-sizing: border-box;}
+img { border:none; display: block;}
+*{
+	margin: 0;
+	padding: 0;
+}
+ul li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+/*内容*/
+#comment{
+	width: 100%;
+	height: 870px;
+	background:#e8ecef;
+}
+#comment_box{
+	height: 870px;
+	width: 1200px;
+	background: white;
+	margin: auto;
+}
+#comment_left{
+	height: 870px;
+	width: 200px;
+	float: left;
+}
+#list {
+    height: 400px;
+    width: 200px;
+}
+#list .active{
+	background:#0e5fb0 ;
+	margin-bottom: 30px;
+}
+#list li {
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+#list li a {
+	display: block;
+	color: black;
+    font-size: 24px;
+    text-align: center;
+}
+#comment_right{
+	height: 600px;
+	width: 950px;
+	float: right;
+}
+#comment_middle{
+	margin-top: 20px;
+	height: 20px;
+	width: 950px;
+	line-height: 20px;
+}
+#comment_middle p{
+	color: #336699;
+}
+#comment_bottom{
+	height: 500px;
+	width: 950px;
+	margin-top: 20px;
+}
+#comment_bottom h4{
+	color: #336699;
+	font-size: 32px;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 2px solid #F1F1F1;
+}

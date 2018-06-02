@@ -1,0 +1,483 @@
+	<!doctype html>
+	<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>修改</title>
+		<link rel="stylesheet" href="pages/forms/formValidation.css" />
+		<link rel="stylesheet" href="pages/forms/bootstrap.css" />
+		<!--[if IE]>
+			<script src="html5shiv.min.js" tppabs="http://libs.baidu.com/html5shiv/2.7/html5shiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+				<div class="row">
+					<!-- form: -->
+					<section>
+						<div class="page-header">
+							<h1 align="center">学校管理</h1>
+						</div>
+
+						<div class="col-lg-8 col-lg-offset-2">
+							<form id="defaultForm" method="POST" action="" class="form-horizontal">
+								<fieldset>
+
+									<div class="form-group">
+										<label class="col-lg-2 control-label">学校名称</label>
+										<div class="col-lg-4">
+											<input type="text" class="form-control" name="schoolname" />
+										</div>
+										<label class="col-lg-2 control-label">简称</label>
+										<div class="col-lg-4">
+											<input type="text" class="form-control" name="abbreviation" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-lg-2 control-label">校训</label>
+										<div class="col-lg-4">
+											<input type="text" class="form-control" name="campustra" />
+										</div>
+									</div>
+									<div class="form-group" style="display: none;">
+										<label class="col-lg-2 control-label">编号</label>
+										<div class="col-lg-4">
+											<input type="text" class="form-control" name="serialnumber" />
+										</div>
+										<label class="col-lg-2 control-label">微信id</label>
+										<div class="col-lg-4">
+											<input type="text" class="form-control" name="WeChatid" />
+										</div>
+									</div>
+									<!-- <div class="form-group">
+										<label class="col-lg-2 control-label">地点</label>
+										<div class="col-lg-5">
+											<div class="col-lg-5 pick-area pick-area6" ></div> 
+											<input type="text" class="form-control" name="place"/> 
+										</div>
+									</div> -->
+									<div class="form-group">
+										<label class="col-lg-2 control-label">地址</label>
+										<div class="col-lg-6">
+											<div class="pick-area pick-area6" ></div> 
+										</div>
+										<div class="col-lg-4">
+											<input type="text" class="form-control" name="place" readonly/> 
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-lg-2 control-label">地址</label>
+										<div class="col-lg-4">
+											<input type="text" class="form-control" name="address" />
+									</div>
+									<label class="col-lg-2 control-label">邮编</label>
+										<div class="col-lg-4">
+											<input type="text" class="form-control" name="zipCode" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-lg-2 control-label">联系人</label>
+										<div class="col-lg-4">
+											<input type="text" class="form-control" name="tel_man" />
+									</div>
+									<label class="col-lg-2 control-label">联系人电话</label>
+										<div class="col-lg-4">
+											<input type="text" class="form-control" name="phoneNumberCN" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-lg-2 control-label">联系人信箱</label>
+										<div class="col-lg-4">
+											<input type="text" class="form-control" name="email" />
+										</div>
+										<label class="col-lg-2 control-label">联系人QQ</label>
+										<div class="col-lg-4">
+											<input type="text" class="form-control" name="QQ" />
+										</div>
+									</div>
+									<div class="form-group">
+											<label class="col-lg-2 control-label">学校类型</label>
+										<div class="col-lg-4">
+											<select class="form-control" name="school_type">
+												<option value="">-- 学校类型 --</option>
+												<option value="小学">小学</option>
+												<option value="初中">初中</option>
+												<option value="高中">高中</option>
+												<option value="大学">大学</option>
+												<option value="职高">职高</option>
+												<option value="职业学院">职业学院</option>
+												<option value="培训学院">培训学院</option>
+												<option value="成人院校">成人院校</option>
+											</select> 
+										</div>
+									</div>
+									<!-- <div class="form-group">
+										<label class="col-lg-2 control-label">UK Phone number</label>
+										<div class="col-lg-5">
+											<input type="text" class="form-control" name="phoneNumberUK" />
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-lg-2 control-label">Hex, RGB, HSL, Keyword color</label>
+										<div class="col-lg-5">
+											<input type="text" class="form-control" name="color" />
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-lg-2 control-label">All colors</label>
+										<div class="col-lg-5">
+											<input type="text" class="form-control" name="colorAll" />
+										</div>
+									</div>
+									<legend>Identical validator</legend>
+									
+									<div class="form-group">
+										<label class="col-lg-2 control-label">Password</label>
+										<div class="col-lg-5">
+											<input type="password" class="form-control" name="password" />
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-lg-2 control-label">Retype password</label>
+										<div class="col-lg-5">
+											<input type="password" class="form-control" name="confirmPassword" />
+										</div>
+									</div>
+									<legend>Other validators</legend>
+									
+									<div class="form-group">
+										<label class="col-lg-2 control-label">Ages</label>
+										<div class="col-lg-2">
+											<input type="text" class="form-control" name="ages" />
+										</div>
+									</div> -->
+									<div class="form-group">
+										<div align="center">
+											<div class="checkbox">
+												<input type="checkbox" name="acceptTerms" /> 接受政策
+											</div>
+										</div>
+									</div>
+								</fieldset>
+
+								<div class="form-group">
+									<div align="center">
+										<button type="submit"  class="btn btn-primary">提交</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</section>
+					<!-- :form -->
+				</div>
+			</div>
+
+		<script type="text/javascript" src="plugins/jQuery/jQuery-2.1.4.min.js" ></script>
+		<script type="text/javascript" src="pages/forms/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="pages/forms/formValidation.js" ></script>
+		<script type="text/javascript" src="pages/forms/bootstrap.js" ></script>
+		<script type="text/javascript" src="pages/forms/zh_CN.js"></script>
+		<script type="text/javascript">
+			function getQueryString(name) {  
+    				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");  
+   					var r = window.location.search.substr(1).match(reg);  
+    				if (r != null)  
+        					return unescape(r[2]);  
+    						return null;  
+			};
+			var schoolid=getQueryString("schoolid");
+				console.log(schoolid);
+			$(document).ready(function() {
+				
+				$("#defaultForm").attr("action", "../../../../UpdateSchoolServlet?schoolid="+schoolid);
+				$("#defaultForm").formValidation({
+					message: 'This value is not valid',
+					icon: {
+						valid: 'glyphicon glyphicon-ok',
+						invalid: 'glyphicon glyphicon-remove',
+						validating: 'glyphicon glyphicon-refresh'
+					},
+					fields: {
+						schoolname: {
+							message: '学校名无效',
+							validators: {
+								notEmpty: {
+									message: '必填'
+								},
+								stringLength: {
+									min: 4,
+									max: 20,
+									message: '学校名长度必须超过4个且少于20个字符'
+								},
+								regexp: {
+									regexp: /^[\u4E00-\u9FA5]*$/,
+									message: '学校名只含有汉字'
+								},
+								remote: {
+                            	type: 'POST',
+                            	url: '../../../../SchoolNameValidationServlet?schoolid='+schoolid,
+                           	 	message: '此学校名已被注册',
+                            	delay:2000
+                        		}
+							}
+						},
+						abbreviation: {
+							message: '简称无效',
+							validators: {
+								notEmpty: {
+									message: '必填'
+								},
+								stringLength: {
+									min: 2,
+									max: 10,
+									message: '用户名长度必须超过2个且少于10个字符'
+								},
+								regexp: {
+									regexp: /^[\w\u4E00-\u9FA5\uF900-\uFA2D]*$/,
+									message: '只含有汉字、数字、字母、下划线不能以下划线开头和结尾'
+								}
+							}
+						},
+						campustra: {
+							message: '校训无效',
+							validators: {
+								notEmpty: {
+									message: '必填'
+								},
+								regexp: {
+									regexp: /^[\u4E00-\u9FA5]*$/,
+									message: '校训只含有汉字'
+								}
+							}
+						},
+						serialnumber: {
+							message: '编号无效',
+  							validators: {
+  									notEmpty: {
+    								message: '编号不能为空'
+   								},
+  								stringLength: {
+   									min: 1,
+    								max: 8,
+    								message: '请输入正确长度的编号'
+   								},
+   								regexp: {
+    								regexp: /^[A-Za-z0-9]+$/,
+    								message: '请输入正确的编号(包含数字字母)'
+  								},
+  								remote: {
+                            	type: 'POST',
+                            	url: '../../../../SerialNumberValidation?schoolid='+schoolid,
+                           	 	message: '此编号已被注册',
+                            	delay:2000
+                        		}
+  						  	}
+						},
+						WeChatid: {
+							message: 'WeChatid无效',
+  							validators: {
+  									notEmpty: {
+    								message: 'WeChatid不能为空'
+   								},
+  								stringLength: {
+   									min: 1,
+    								max: 8,
+    								message: '请输入正确长度的WeChatid'
+   								},
+   								regexp: {
+    								regexp: /^[A-Za-z0-9]+$/,
+    								message: '请输入正确的WeChatid(包含数字字母)'
+  								},
+  								remote: {
+                            	type: 'POST',
+                            	url: '../../../../WeChatidValidation?schoolid='+schoolid,
+                           	 	message: '此WeChatid已被注册',
+                            	delay:2000
+                        		}
+  						  	}
+						},
+						place: {
+							validators: {
+								notEmpty: {
+									message: '这个地点是必需的，不能是空的'
+								}
+							}
+						},
+						address: {
+							validators: {
+								notEmpty: {
+									message: '必填'
+								},
+								regexp: {
+									regexp: /^[\w\u4E00-\u9FA5\uF900-\uFA2D]*$/,
+									message: '只含有汉字、数字、字母、下划线不能以下划线开头和结尾'
+								}
+							}
+						},
+						zipCode: {
+							validators: {
+								notEmpty: {
+									message: '必填'
+								},
+								regexp: {
+									regexp: /^[0-9][0-9]{5}$/,
+									message: '邮编无效'
+								}
+							}
+						},
+						website: {
+							validators: {
+								uri: {
+									message: '该输入不是有效的URL'
+								}
+							}
+						},
+						tel_man: {
+							validators: {
+								notEmpty: {
+									message: '必填'
+								},
+								stringLength: {
+									min: 2,
+									max: 10,
+									message: '用户名长度必须超过2个且少于10个字符'
+								},
+								regexp: {
+									regexp: /^[\w\u4E00-\u9FA5\uF900-\uFA2D]*$/,
+									message: '只含有汉字、数字、字母、下划线不能以下划线开头和结尾'
+								}
+							}
+						},
+						phoneNumberCN: {
+							validators: {
+								notEmpty: {
+									message: '必填'
+								},
+								regexp:{
+									regexp:/^1[3|5|8]{1}[0-9]{9}$/,
+									message: '该输入不是有效的电话号码'
+								}
+							}
+						},
+						email: {
+							validators: {
+								notEmpty: {
+									message: '该电子邮件地址是必需的，不能为空'
+								},
+								emailAddress: {
+									message: '该输入不是有效的电子邮件地址'
+								}
+							}
+						},
+						QQ: {
+							validators: {
+								notEmpty: {
+									message: '必填'
+								},
+								regexp:{
+									regexp:/[1-9][0-9]{4,}/,
+									message: '该输入不是有效的电话号码'
+								}
+							}
+						},
+						school_type: {
+							validators: {
+								notEmpty: {
+									message: '这个地点是必需的，不能是空的'
+								}
+							}
+						},
+						phoneNumberUK: {
+							validators: {
+								phone: {
+									message: '该输入不是有效的英国电话号码',
+									country: 'GB'
+								}
+							}
+						},
+						color: {
+							validators: {
+								color: {
+									type: ['hex', 'rgb', 'hsl', 'keyword'],
+									message: 'Must be a valid %s color'
+								}
+							}
+						},
+						colorAll: {
+							validators: {
+								color: {}
+							}
+						},
+						
+						acceptTerms: {
+							validators: {
+								notEmpty: {
+									message: '你必须接受条款和政策'
+								}
+							}
+						},
+						password: {
+							validators: {
+								notEmpty: {
+									message: 'The password is required and can\'t be empty'
+								}
+							}
+						},
+						confirmPassword: {
+							validators: {
+								notEmpty: {
+									message: 'The confirm password is required and can\'t be empty'
+								},
+								identical: {
+									field: 'password',
+									message: 'The password and its confirm are not the same'
+								}
+							}
+						},
+						ages: {
+							validators: {
+								lessThan: {
+									value: 100,
+									inclusive: true,
+									message: 'The ages has to be less than 100'
+								},
+								greaterThan: {
+									value: 10,
+									inclusive: false,
+									message: 'The ages has to be greater than or equals to 10'
+								}
+							}
+						}
+					}
+				}).on('success.form.fv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the FormValidation instance
+            var fv = $form.data('formValidation');
+
+            // Use Ajax to submit form data
+             $.ajax({
+                url: $form.attr('action'),
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                type: 'POST',
+                success: function(result) {
+                    alert(result);
+                    console.log(result);
+                }
+            });
+        });
+	});
+		</script>
+	</body>
+	</html>

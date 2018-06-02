@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>首页</title>
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/index.css" />
+		<script src="../lib/jquery/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../js/index.js" ></script>
+		
+	</head>
+	<body>
+		<!--顶部-->
+		<header>
+			<div id="header_box">
+				<div class="logo">
+					<h1>
+						<a href="index.html"><img src="../img/logo.png"><span>西南民族大学</span></a>
+					</h1>
+				</div>
+				<div id="name">
+					<h4>PLC精品课程</h4>
+				</div>
+				<ul id="list">
+					<li><a href="index.html"><b>首页</b></a></li>
+					<li><a href="teachers.html"><b>教师团队</b></a></li>
+					<li><a href="class.html"><b>课程介绍</b></a></li>
+					<li><a href="ziyuan.html"><b>教学资源</b></a></li>
+					<li><a href="wenda.html"><b>问答模块</b></a></li>
+					<li><a href="xiti.html"><b>习题与答案</b></a></li>
+					<li><a href="pingjia.html"><b>教学评价</b></a></li>			
+				</ul>
+				<!-- <div id="text">
+					<a href="register.html">注册</a>
+					<a href="login.html">登录</a>
+				</div>   -->
+			</div>
+			
+		</header>
+		<!--轮播图-->
+		<div id="banner">
+			<div id="banner_box">
+				<ul id="banner_list">
+					<li class="banner_li"><img src="../img/img1.jpg"></li>
+					<li class="banner_li"><img src="../img/img2.jpg"></li>
+					<li class="banner_li"><img src="../img/img3.jpg"></li>
+					<li class="banner_li"><img src="../img/img4.jpg"></li>
+					<li class="banner_li"><img src="../img/img5.png"></li>
+				</ul> 
+				<div id="direction">
+				<a id="left" href="javascript:void(0)">&lt;</a>
+				<a id="right" href="javascript:void(0)">&gt;</a>
+			</div>
+				<div id="circle">
+					<!--<i class="btn"></i>
+					<i></i>
+					<i></i>
+					<i></i>
+					<i></i>-->
+				</div>
+			</div>
+		</div>
+	
+		<!--内容-->
+		<comment>
+			<div id="comment_box">
+				<div id="comment_top">
+					<dl>
+						<dt>教学科研</dt>
+						<dd>
+							<ul id="ul1">
+								<li><a href="#">2017届考研数据</li>
+								<li><a href="#">近期教师成就<span>2018.04.01</span></li>
+								<li><a href="#">近期讲座<span>2018.04.01</span></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="comment_dt">
+						<dt>创新就业</dt>
+						<dd>
+							<ul id="ul2">
+								<li><a href="#">2017届就业数据<span>2018.04.01</span></li>
+								<li><a href="#">最新赛事<span>2018.04.01</span></li>
+								<li><a href="#">就业前景分析<span>2018.04.01</span></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl>
+						<dt>通知公告</dt>
+						<dd>
+							<ul id="ul3">
+								<li><a href="#">相关会议<span>2018.04.01</span></li>
+								<li><a href="#">选课通知<span>2018.04.01</span></li>
+								
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			<div id="comment_bottom">
+					<h5>相关链接</h5>
+					<ul id="comment_list">
+						<li><a href="http://www.swun.edu.cn/index.htm">西南民族大学官网</a></li>
+						<li><a href="http://dxxy.swun.edu.cn/index.htm">电气信息工程学院官网</a></li>
+						<li><a href="http://211.83.241.245/">西南民族大学教务系统</a></li>
+						<li><a href="http://lib.swun.cn/index.htm">西南民族大学图书馆</a></li>
+						<li><a href="http://zsjy.swun.edu.cn/">西南民族大学招生就业处</a></li>
+						<li><a href="http://xxzx.swun.cn/">西南民族大学信息与教育技术中心</a></li>
+					</ul>
+				</div>
+		</div>
+		</comment>
+		<!--底部-->
+		<footer>
+			<div id="footer_box">
+				<p>武侯校区办公地址：成都市一环路南四段16号行政大楼610房间&nbsp;&nbsp;邮编：610041&nbsp;&nbsp;电话：028——85522314</p>
+				<p>航空港校区办公地址：成都市双流县航空港开发区大件路文星段168号行政大楼213房间&nbsp;&nbsp;邮编：610226&nbsp;&nbsp;电话：028-85700353</p>
+				<p>Email:dqxy@swun.edu.cn&nbsp;&nbsp;版权所有©西南民族大学电气信息工程学院自动化专业</p>
+			</div>
+		</footer>
+		<script>
+		$(document).ready(function () {
+			$.ajax({
+				type: "get",
+				url: "/PLC/Information",
+				dataType: "json",
+				date: "",
+				success: function (data) {
+					console.log(data);
+					console.log(data[0].title);
+					var html="";
+					$("#ul1").empty();
+					$("#ul2").empty();
+					$("#ul3").empty();
+					for(var i=0;i<data.length;i++){
+						html="<li><a href='http://www.xinhuanet.com/politics/leaders/2018-04/30/c_1122766125.htm' target='_blank' >"+data[i].title+"</a><span>"+data[i].date+"</span> </li>";
+						if(data[i].type=="科学教研"){
+						$("#ul1").append(html);
+						}
+						else if(data[i].type=="创新就业"){
+							$("#ul2").append(html);
+						}else{
+							$("#ul3").append(html);
+						}
+					}
+					//  $("ul").append(html);
+				},
+				error: function (jqXHR) {
+					$("ul").html("发生错误:" + jqXHR.status);
+				},
+			});
+		});
+	</script>
+	</body>
+</html>
+
+

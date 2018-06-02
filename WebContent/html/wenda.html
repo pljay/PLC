@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/wenda.css" />
+		<link rel="stylesheet" 
+			href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+			crossorigin="anonymous">
+			<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+			<script type="text/javascript" src="jquery-1.11.3.js" ></script>
+			<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+				integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+				crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<!--顶部-->
+		<header>
+			<div id="header_box">
+				<div class="logo">
+					<h1>
+						<a href="index.html"><img src="../img/logo.png"><span>西南民族大学</span></a>
+					</h1>
+				</div>
+				<div id="name">
+					<h4>PLC精品课程</h4>
+				</div>
+				<ul id="list">
+					<li><a href="index.html"><b>首页</b></a></li>
+					<li><a href="teachers.html"><b>教师团队</b></a></li>
+					<li><a href="class.html"><b>课程介绍</b></a></li>
+					<li><a href="ziyuan.html"><b>教学资源</b></a></li>
+					<li><a href="wenda.html"><b>问答模块</b></a></li>
+					<li><a href="xiti.html"><b>习题与答案</b></a></li>
+					<li><a href="pingjia.html"><b>教学评价</b></a></li>			
+				</ul>
+				<!-- <div id="text">
+					<a href="register.html">注册</a>
+					<a href="login.html">登录</a>
+				</div>   -->
+			</div>
+		</header>
+		<!--主体内容-->
+		<div id="comment">
+			<div id="comment_box">
+				<!-- <div id="comment_left">
+					<ul id="list">
+						<li class="active"><a href="teachers.html">问答模块</a></li>
+						<li><a href="#">问题</a></li>
+						<li><a href="#">答案</a></li>
+				</ul>
+				</div> -->
+				<div id="comment_right">
+					<div id="comment_middle">
+						<p><span>当前位置：</span><a href="index.html">首页>></a><a href="wenda.html">问答模块>></a></p>
+					</div>
+					<div id="comment_bottom" style="overflow-y:auto; overflow-x:hidden">
+						<h4>讨论</h4>
+						<ul class="nav navbar-nav navbar-right">
+		        			<li style="line-height: 50px; margin-right: 20px;">
+		        				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalthree" data-whatever="@mdo">提问</button>
+		        			</li>
+		        		<!-- 	<li style="margin-left: 20px; margin-right: 20px; line-height: 50px;" >
+		        			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModaltwo" data-whatever="@mdo">写文章</button>
+		        		</li> -->
+						  </ul>
+					  <div id="wenda" >
+	      				<div class="list-item">	
+	      					<div id="title">傻呵呵呵呵呵</div>
+	      					<div id="item">内容</br>哈哈呵呵</br>哈哈呵呵</br>哈哈呵呵</br>哈哈呵呵
+	      					</div>
+	      					<button class="btn btn-default" data-toggle="modal" data-target="#exampleModalthree" data-whatever="@mdo" style="float: right;">评论</button>
+	      				</div>
+	      				<div class="list-item">	
+	      					<div id="title">傻呵呵呵呵呵</div>
+	      					<div id="item">内容</br>哈哈呵呵</br>哈哈呵呵</br>哈哈呵呵</br>哈哈呵呵
+	      					</div>
+	      					<button class="btn btn-default" data-toggle="modal" data-target="#exampleModalthree" data-whatever="@mdo" style="float: right;">评论</button>
+						  </div>
+						</div>
+	      				<!-- <nav aria-label="Page navigation" style="text-align: center;margin-top: 20px;">
+							  <nav aria-label="Page navigation">
+								  <ul class="pagination" >
+								    <li>
+								      <a href="#" aria-label="Previous">
+								        <span aria-hidden="true">&laquo;</span>
+								      </a>
+								    </li>
+								    <li><a href="#">1</a></li>
+								    <li><a href="#">2</a></li>
+								    <li><a href="#">3</a></li>
+								    <li><a href="#">4</a></li>
+								    <li><a href="#">5</a></li>
+								    <li>
+								      <a href="#" aria-label="Next">
+								        <span aria-hidden="true">&raquo;</span>
+								      </a>
+								    </li>
+								  </ul>
+								</nav> -->
+							<div class="modal fade" id="exampleModalthree" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+							  	<div class="modal-dialog" role="document">
+								    <div class="modal-content">
+								      	<div class="modal-header">
+									        <button id="close" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									       <div class="alert alert-success" style="display: none;"></div>
+								      	</div>
+								      	<div class="modal-body">
+								        <form id="form">
+									        <div class="form-group">
+									            <label for="recipient-name" class="control-label">内容:</label>
+									            <input type="text" name="content" class="form-control" placeholder="输入内容">
+									        </div>
+								        </form>
+								      	</div>
+								      	<div class="modal-footer">
+											  
+								        	<button type="button" onclick="submit()" class="btn btn-primary" id="btntwo">提交</button>
+								      	</div>
+								    </div>
+							  	</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--底部-->
+		<footer>
+			<div id="footer_box">
+				<p>武侯校区办公地址：成都市一环路南四段16号行政大楼610房间&nbsp;&nbsp;邮编：610041&nbsp;&nbsp;电话：028——85522314</p>
+				<p>航空港校区办公地址：成都市双流县航空港开发区大件路文星段168号行政大楼213房间&nbsp;&nbsp;邮编：610226&nbsp;&nbsp;电话：028-85700353</p>
+				<p>Email:dqxy@swun.edu.cn&nbsp;&nbsp;版权所有©西南民族大学电气信息工程学院自动化专业</p>
+			</div>
+		</footer>
+			<script>
+		$(document).ready(function () {
+			$.ajax({
+				type: "get",
+				url: "../WenDaList",
+				dataType: "json",
+				date: "",
+				success: function (data) {
+					console.log(data);
+					console.log(data[0].title);
+					var html="";
+					 $("#wenda").empty();
+					for(var i=0;i<data.length;i++){
+						 html="<div class='list-item' ><div id='title'>"+data[i].title+"</div><div id='item' onclick='more("+data[i].id+")'>"+data[i].content+"</div><button class='btn btn-default' data-toggle='modal' data-target='#exampleModalthree' data-whatever='@mdo' style='float: right;' onclick='getid("+data[i].id+")'>评论</button></div>";
+					    $("#wenda").append(html);
+					}
+				},
+				error: function (jqXHR) {
+					$("ul").html("发生错误:" + jqXHR.status);
+				},
+			});
+		});
+		function more(e){
+			localStorage.removeItem('wendaid');
+						$.ajax({
+				type: "get",
+				url: "../WenDaMoreList?id="+e,
+				dataType: "json",
+				date: "",
+				success: function (data) {
+					
+					var html="";
+					
+					 if(data.length>0){
+						 $("#wenda").empty();
+					for(var i=0;i<data.length;i++){
+						 html="<div class='list-item' ><div id='title'>"+data[i].title+"</div><div id='item' onclick='more("+data[i].id+")'>"+data[i].content+"</div><button class='btn btn-default' data-toggle='modal' data-target='#exampleModalthree' data-whatever='@mdo' style='float: right;' onclick='getid("+data[i].id+")'>评论</button></div>";
+					  $("#wenda").append(html);
+					}
+						 }else{
+							 alert("暂无回复")
+						 }
+				},
+				error: function (jqXHR) {
+					$("ul").html("发生错误:" + jqXHR.status);
+				},
+			});
+		};
+		function getid(e){
+			localStorage.setItem("wendaid",e);
+		};
+		function submit(){
+			var parentid=localStorage.getItem("wendaid");
+			localStorage.removeItem('wendaid');
+			$.ajax({
+   				 type: 'POST',
+				 url:"../WenDaInsert?parentid="+parentid,
+				 dataType:'json',
+   			     data: $("#form").serialize() ,
+			     async:false, 
+     			 success: function (data) {
+					  alert(data);
+       				$('.alert').text(data).show();
+					   	$("#close").trigger("click"); 
+				 }
+			});
+		
+		}
+	</script>
+	</body>
+	
+</html>

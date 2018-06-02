@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="../css/base.css" />
+	<link rel="stylesheet" href="../css/teachers.css" />
+	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="../bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="../bootstrap/css/bootstrap-table.css" rel="stylesheet">
+	<script src="../plugins/jQuery/jQuery-2.1.4.min.js "></script>
+
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../bootstrap/js/bootstrap-table.js"></script>
+	<script type="text/javascript" src="../bootstrap/js/bootstrap-table-treegrid.js"></script>
+	<script type="text/javascript" src="../bootstrap/js/bootstrap-table-zh-CN.js"></script>
+	<script type="text/javascript" src="../common/js/common.js"></script>
+	<script type="text/javascript">  
+		$(function () {
+			var $table = $("#table");
+			$table.bootstrapTable({
+				url: '../Resourcelist',
+				dataType: 'json',
+				pagination: true,//分页  
+				paginationPreText: '上一页',
+				paginationNextText: '下一页',
+				striped: true,//条纹  
+				showColumns: true,//内容列下拉框  
+				showRefresh: true,//刷新按钮  
+				sidePagination: "server",//服务端分页，还有client，不过不认为除非想玩单机版的，基本都是由服务端进行分页  
+				toolbar: "#toolbar",
+				responseHandler: responseHandler,//接受后台传过来的值进行绑定处理的函数  
+				queryParamsType: "undefined",
+				queryParams: queryParams,//一系列操作后向后台发送参数的函数 
+				idField: 'ID',
+				columns: [
+					{
+						field: 'ck',
+						checkbox: true
+					}, {
+						title: "名称",
+						field: "resourcename",
+						align: 'center',
+						valign: "middle"
+					}, {
+						title: "服务器地址",
+						field: "resource",
+						align: 'center',
+						valign: "middle"
+					}, {
+						title: "资源类型",
+						field: "typename",
+						align: 'center',
+						valign: "middle"
+					}
+				]
+			});
+		});
+
+		function responseHandler(res) {
+			console.log(res);
+			return {
+				'total': res.total,
+				"rows": res.data,
+				"offset": res.offset,
+				"limit": res.limit
+			}
+		}
+
+		function queryParams(params) {
+			//一系列操作后向后台传递的参数，这里可以传搜索框的值  
+			var searchName = $("#searchName").val();
+			return {
+				"pageNumber": params.pageNumber,
+				"pageSize": params.pageSize,
+				"searchName": searchName
+			}
+		}  
+	</script>
+</head>
+
+<body>
+	<!--顶部-->
+	<header>
+		<div id="header_box">
+			<div class="logo">
+				<h1>
+					<a href="index.html">
+						<img src="../img/logo.png">
+						<span>西南民族大学</span>
+					</a>
+				</h1>
+			</div>
+			<div id="name">
+				<h4>PLC精品课程</h4>
+			</div>
+			<ul id="list">
+				<li>
+					<a href="index.html">
+						<b>首页</b>
+					</a>
+				</li>
+				<li>
+					<a href="teachers.html">
+						<b>教师团队</b>
+					</a>
+				</li>
+				<li>
+					<a href="class.html">
+						<b>课程介绍</b>
+					</a>
+				</li>
+				<li>
+					<a href="ziyuan.html">
+						<b>教学资源</b>
+					</a>
+				</li>
+				<li>
+					<a href="wenda.html">
+						<b>问答模块</b>
+					</a>
+				</li>
+				<li>
+					<a href="xiti.html">
+						<b>习题与答案</b>
+					</a>
+				</li>
+				<li>
+					<a href="pingjia.html">
+						<b>教学评价</b>
+					</a>
+				</li>
+			</ul>
+			<!-- <div id="text">
+				<a href="register.html">注册</a>
+				<a href="login.html">登录</a>
+			</div> -->
+		</div>
+	</header>
+	<!--主体内容-->
+	<div class="panel-body">
+		<div class="list-op" id="list_op">
+			<button type="button" class="btn btn-default btn-sm" onclick="downloadresource()" data-toggle="modal" data-target="#myModal">
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>下载
+			</button>
+		</div>
+		<table id="table">
+
+		</table>
+		<!-- <div id="comment_box">
+			<div id="comment_left">
+				<ul id="list">
+					<li class="active">
+						<a href="ziyuan.html">教学资源</a>
+					</li>
+				</ul>
+			</div>
+			<div id="comment_right">
+				<div id="comment_middle">
+					<p>
+						<span>当前位置：</span>
+						<a href="index.html">首页>></a>
+						<a href="ziyuan.html">教学资源>></a>
+					</p>
+				</div>
+				<div id="comment_bottom">
+					<h4>教学资源</h4>
+					<p>文字</p>
+				</div>
+			</div>
+		</div> -->
+
+		<!--底部-->
+		<footer>
+			<div id="footer_box">
+				<p>武侯校区办公地址：成都市一环路南四段16号行政大楼610房间&nbsp;&nbsp;邮编：610041&nbsp;&nbsp;电话：028——85522314</p>
+				<p>航空港校区办公地址：成都市双流县航空港开发区大件路文星段168号行政大楼213房间&nbsp;&nbsp;邮编：610226&nbsp;&nbsp;电话：028-85700353</p>
+				<p>Email:dqxy@swun.edu.cn&nbsp;&nbsp;版权所有©西南民族大学电气信息工程学院自动化专业</p>
+			</div>
+		</footer>
+		<script>
+			function downloadresource() {
+				var chk_value = [];//定义一个数组   
+				$('input[name="btSelectItem"]:checked').each(function () {//遍历每一个名字为interest的复选框，其中选中的执行函数  
+					console.log("qqqqqq"+$(this).parent().parent().find("td").eq("2").text());
+					window.location.href=".."+$(this).parent().parent().find("td").eq("2").text(); 
+				});
+				console.log(chk_value);
+			};
+		</script>
+		<!-- <script>
+		$(document).ready(function () {
+			$.ajax({
+				type: "get",
+				url: "/PLC/ZiYuanListServlet",
+				dataType: "json",
+				date: "",
+				success: function (data) {
+					console.log(data);
+					console.log(data[0].typename);
+					var html = "";
+					for (var i = 0; i < data.length; i++) {
+						html += "<li><a href='/PLC/ZiYuanListServlet?id=" + data[i].id + "' target='_blank'>" +
+							data[i].typename + "</a> </li>";
+
+					}
+					alert(html)
+					$("ul#list").append(html);
+				},
+				error: function (jqXHR) {
+					$("ul#list").html("发生错误:" + jqXHR.status);
+				},
+			});
+		});
+	</script> -->
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <form id="upload" action="/PLC/UploadServlet" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name">
+        <input type="file" name="ziyuan">
+        <input type="submit">
+    </form>
+     <select form="upload" name="select" >
+            <option  value="1">课件</option>
+            <option value="2">实验报告</option>
+            <option value="3">实验指导书</option>
+        </select>
+</body>
+
+
+</html>
